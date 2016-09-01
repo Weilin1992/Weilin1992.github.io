@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Weilin Zhao&#39;s blogs</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-08-01T10:35:52.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Weilin Zhao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python: First Class</title>
+    <link href="http://yoursite.com/2016/08/01/Python-First-Class/"/>
+    <id>http://yoursite.com/2016/08/01/Python-First-Class/</id>
+    <published>2016-08-01T20:32:56.000Z</published>
+    <updated>2016-08-01T10:35:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>When I learned python decorators I found a very interesting concept: First Class Object. A<br>function in python is said to be a first class object.  </p>
+<p>So what is First Class Object? Indeed, it is an entity that can be dynamically created, destroyed,<br>passed to a function, returned as a value, and have all the rights as other objects.  </p>
+<p>Depending on the language, the first class object can be:   </p>
+<ul>
+<li>expressible as an anonymous literal value</li>
+<li>storable in variables</li>
+<li>storable in data structures</li>
+<li>have an intrinsic identity (independent of any given name)</li>
+<li>comparable for equality with other entities</li>
+<li>passable as a parameter to a procedure/function</li>
+<li>returnable as the result of a procedure/function</li>
+<li>constructible at runtime</li>
+<li>printable</li>
+<li>readable</li>
+<li>transmissible among distributed processes</li>
+<li>storable outside running processes</li>
+</ul>
+<p>Wiki:<a href="https://en.wikipedia.org/wiki/First-class_function" target="_blank" rel="external">First class function</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;When I learned python decorators I found a very interesting concept: First Class Object. A&lt;br&gt;function in python is said to be a first cl
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Add Two numbers</title>
+    <link href="http://yoursite.com/2016/07/06/Add-Two-numbers/"/>
+    <id>http://yoursite.com/2016/07/06/Add-Two-numbers/</id>
+    <published>2016-07-06T20:10:42.000Z</published>
+    <updated>2016-07-06T14:15:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="external">Add Two numbers</a></p>
+<p>pretty simple, be careful with boundary conditions</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Definition for singly-linked list.</span></div><div class="line"><span class="comment"># class ListNode(object):</span></div><div class="line"><span class="comment">#     def __init__(self, x):</span></div><div class="line"><span class="comment">#         self.val = x</span></div><div class="line"><span class="comment">#         self.next = None</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addTwoNumbers</span><span class="params">(self, l1, l2)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type l1: ListNode</div><div class="line">        :type l2: ListNode</div><div class="line">        :rtype: ListNode</div><div class="line">        """</div><div class="line">        result = ListNode(<span class="number">0</span>)</div><div class="line">        head = result</div><div class="line">        flag = <span class="number">0</span></div><div class="line">        <span class="keyword">while</span> l1 != <span class="keyword">None</span> <span class="keyword">and</span> l2 != <span class="keyword">None</span>:</div><div class="line">            sum = l1.val + l2.val + flag</div><div class="line">            next = ListNode(sum % <span class="number">10</span>)</div><div class="line">            flag = sum / <span class="number">10</span></div><div class="line">            head.next = next</div><div class="line">            head = head.next</div><div class="line">            l1 = l1.next</div><div class="line">            l2 = l2.next</div><div class="line"></div><div class="line"></div><div class="line">        l = l1</div><div class="line">        <span class="keyword">if</span>(l1 == <span class="keyword">None</span>):</div><div class="line">            l = l2</div><div class="line"></div><div class="line"></div><div class="line">        <span class="keyword">while</span> l != <span class="keyword">None</span>:</div><div class="line">            sum = l.val + flag</div><div class="line">            next = ListNode(sum % <span class="number">10</span>)</div><div class="line">            flag = sum / <span class="number">10</span></div><div class="line">            head.next = next</div><div class="line">            head = head.next</div><div class="line">            l = l.next</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(flag != <span class="number">0</span>):</div><div class="line">            next = ListNode(flag)</div><div class="line">            head.next = next</div><div class="line"></div><div class="line">        <span class="keyword">return</span> result.next</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/add-two-numbers/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Add Two numbers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;pretty simple, be care
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Two Sum</title>
+    <link href="http://yoursite.com/2016/07/06/Two-Sum/"/>
+    <id>http://yoursite.com/2016/07/06/Two-Sum/</id>
+    <published>2016-07-06T19:08:04.000Z</published>
+    <updated>2016-07-06T14:15:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>We can use hash table to solve this problems</p>
+<p>But pay attention that if the target is exactly double of the element, which will return the same indices.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums, target)</span>:</span></div><div class="line">  <span class="string">"""</span></div><div class="line">  :type nums: List[int]</div><div class="line">  :type target: int</div><div class="line">  :rtype: List[int]</div><div class="line">  """</div><div class="line">  result = []</div><div class="line">  dict = &#123;&#125;</div><div class="line">  <span class="keyword">for</span> i,item <span class="keyword">in</span> enumerate(nums):</div><div class="line">      dict[item] = i</div><div class="line"></div><div class="line"></div><div class="line">  <span class="keyword">for</span> i,item <span class="keyword">in</span> enumerate(nums):</div><div class="line">      num = target - item</div><div class="line">      <span class="keyword">if</span>(dict.has_key(num)):</div><div class="line">          <span class="keyword">if</span>(dict[num] != i):</div><div class="line">              <span class="keyword">return</span> [i,dict[num]]</div><div class="line"></div><div class="line">  <span class="keyword">return</span> result</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;We can use hash table to solve this problems&lt;/p&gt;
+&lt;p&gt;But pay attention that if the target is exactly double of the element, which will ret
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>My First Post</title>
+    <link href="http://yoursite.com/2016/07/06/my-first-post/"/>
+    <id>http://yoursite.com/2016/07/06/my-first-post/</id>
+    <published>2016-07-06T18:55:28.000Z</published>
+    <updated>2016-07-06T07:01:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Why-do-I-write-blogs"><a href="#Why-do-I-write-blogs" class="headerlink" title="Why do I write blogs"></a>Why do I write blogs</h2><p>I was not used to write blogs, more exactly, I don’t like write my ideas down. It is a bad habit, sometimes I thought I understand something but actually I didn’t or after a time I forget all of it. So I decide to write blogs, and hope I can stick to it.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Why-do-I-write-blogs&quot;&gt;&lt;a href=&quot;#Why-do-I-write-blogs&quot; class=&quot;headerlink&quot; title=&quot;Why do I write blogs&quot;&gt;&lt;/a&gt;Why do I write blogs&lt;/h2&gt;&lt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/07/05/hello-world/"/>
+    <id>http://yoursite.com/2016/07/05/hello-world/</id>
+    <published>2016-07-06T03:56:11.000Z</published>
+    <updated>2016-07-06T03:56:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

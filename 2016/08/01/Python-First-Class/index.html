@@ -1,22 +1,40 @@
-extends partial/layout
+<!DOCTYPE html><html lang="English"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Weilin Zhao's blogs</title><link rel="short icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Roboto Mono"><!-- baidu analytics--><script type="text/javascript">var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9e0cbea7d3319c6c94c71dfb93c151b8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- google analytics--><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-include mixins/container
-include mixins/paginator
-include mixins/tags
-include mixins/comment
+ga('create', 'UA-74273646-1', 'auto');
+ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">Weilin Zhao's blogs</a><ul class="nav"><li class="nav-link"><a href="/" target="_self">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/tags/" target="_self">Tags</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><article class="post"><h1 class="post-title">Python: First Class</h1><span class="post-time">Aug 1, 2016</span><div class="post-content"><p>When I learned python decorators I found a very interesting concept: First Class Object. A<br>function in python is said to be a first class object.  </p>
+<p>So what is First Class Object? Indeed, it is an entity that can be dynamically created, destroyed,<br>passed to a function, returned as a value, and have all the rights as other objects.  </p>
+<p>Depending on the language, the first class object can be:   </p>
+<ul>
+<li>expressible as an anonymous literal value</li>
+<li>storable in variables</li>
+<li>storable in data structures</li>
+<li>have an intrinsic identity (independent of any given name)</li>
+<li>comparable for equality with other entities</li>
+<li>passable as a parameter to a procedure/function</li>
+<li>returnable as the result of a procedure/function</li>
+<li>constructible at runtime</li>
+<li>printable</li>
+<li>readable</li>
+<li>transmissible among distributed processes</li>
+<li>storable outside running processes</li>
+</ul>
+<p>Wiki:<a href="https://en.wikipedia.org/wiki/First-class_function" target="_blank" rel="external">First class function</a></p>
+</div></article><div class="tags"><a href="/tags/python/">python</a></div><div class="paginator"><a href="/2016/07/06/Add-Two-numbers/" class="next"><span>Next</span><i class="fa fa-chevron-right"></i></a></div><section id="comments"><div id="disqus_thread"></div></section><script type="text/javascript">(function() {
+var d = document, s = d.createElement('script');
 
-block title
-  title= config.title
+s.src = '//ahonn.disqus.com/embed.js';
 
-block container
-  +post()
-
-block tags
-  +tags()
-
-block pagination
-  +paginator('post')
-
-block comment
-  if theme.comments.post
-    +comment()
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script></section><footer><div class="copyright"><p><span class="heart"><i class="fa fa-heart"></i></span><span class="author">Weilin Zhao</span></p><p class="theme">Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p></div><label id="back2top"><i class="fa fa-chevron-up"></i></label></footer></div></body><script src="/js/back2top.js"></script></html>
